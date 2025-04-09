@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Razafindrazefania Perry</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#6366f1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+  :root {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+}
+.timeline-item {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.timeline-dot {
+transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+transform: scale(1.2);
+background-color: #3b82f6;
+}
+.skill-bar {
+position: relative;
+height: 8px;
+border-radius: 4px;
+background: #e5e7eb;
+overflow: hidden;
+}
+.skill-progress {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+border-radius: 4px;
+background: linear-gradient(90deg, #3b82f6, #6366f1);
+transition: width 1.5s ease;
+}
+.contact-icon {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+.contact-icon:hover {
+transform: scale(1.2);
+color: #3b82f6;
+}
+.experience-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experience-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.active {
+opacity: 1;
+transform: translateY(0);
+}
+@keyframes slideInFromLeft {
+0% {
+transform: translateX(-50px);
+opacity: 0;
+}
+100% {
+transform: translateX(0);
+opacity: 1;
+}
+}
+.slide-in-left {
+animation: slideInFromLeft 0.5s ease forwards;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #3b82f6;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.btn-primary {
+position: relative;
+overflow: hidden;
+}
+.btn-primary::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 50%;
+transform: translate(-50%, -50%);
+transition: width 0.6s ease, height 0.6s ease;
+}
+.btn-primary:hover::after {
+width: 300px;
+height: 300px;
+}
+.tech-icon {
+transition: transform 0.3s ease;
+}
+.tech-icon:hover {
+transform: rotate(10deg) scale(1.1);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">R. Perry</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors">À propos</a>
+<a href="#formation" class="nav-link text-gray-700 hover:text-primary transition-colors">Formation</a>
+<a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors">Expérience</a>
+<a href="#competences" class="nav-link text-gray-700 hover:text-primary transition-colors">Compétences</a>
+<a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden" style="background-image: url('https://public.readdy.ai/ai/img_res/f809b5fafb86b47716212c329aeb5a09.jpg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 to-white/50"></div>
+<div class="container mx-auto px-6 relative">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 fade-in active">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">RAZAFINDRAZEFANIA PERRY</h1>
+<h2 class="text-xl md:text-2xl text-primary font-medium mb-6">Spécialiste en Communication Multimédia</h2>
+<p class="text-gray-600 mb-8 max-w-lg">Passionné par la communication digitale et le multimédia, je combine créativité et compétences techniques pour créer des expériences numériques impactantes.</p>
+<div class="flex space-x-4">
+<a href="#contact" class="btn-primary bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Me contacter</a>
+<a href="#formation" class="bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">Mon parcours</a>
+</div>
+</div>
+<div class="md:w-1/2 mt-12 md:mt-0 flex justify-center fade-in active" style="animation-delay: 0.3s;">
+<div class="relative">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl transform transition-transform hover:scale-105 duration-300">
+<img src="razafindrazefaniaperry.jpeg" alt="Razafindrazefania Perry" class="w-full h-full object-cover object-top">
+</div>
+<div class="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white transform transition-transform hover:rotate-12 duration-300">
+<i class="ri-user-3-line ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-3xl font-bold text-gray-800 mb-2">À propos de moi</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Spécialiste en Communication Multimédia basé à Fianarantsoa, Madagascar. Je suis actuellement en Master 1 et je possède une solide expérience dans la production audiovisuelle et la gestion de projets numériques.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 fade-in border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4 transform transition-transform hover:rotate-12 duration-300">
+<i class="ri-graduation-cap-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Formation académique</h3>
+<p class="text-gray-600">Parcours académique en Communication Multimédia avec une spécialisation en Relations Publiques à l'EMIT, Université de Fianarantsoa.</p>
+<a href="#formation" class="inline-flex items-center mt-3 text-primary hover:text-primary/80 transition-colors">
+<span>En savoir plus</span>
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 fade-in border border-gray-100" style="animation-delay: 0.2s;">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4 transform transition-transform hover:rotate-12 duration-300">
+<i class="ri-briefcase-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Expérience professionnelle</h3>
+<p class="text-gray-600">Expérience en production audiovisuelle, gestion de ressources humaines et coordination d'équipes dans divers contextes professionnels.</p>
+<a href="#experience" class="inline-flex items-center mt-3 text-primary hover:text-primary/80 transition-colors">
+<span>En savoir plus</span>
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 fade-in border border-gray-100" style="animation-delay: 0.4s;">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 text-primary rounded-full mb-4 transform transition-transform hover:rotate-12 duration-300">
+<i class="ri-tools-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Compétences techniques</h3>
+<p class="text-gray-600">Maîtrise des logiciels Adobe, Blender, Figma et MS Office. Compétent dans plusieurs systèmes d'exploitation et trilingue (Malgache, Français, Anglais).</p>
+<a href="#competences" class="inline-flex items-center mt-3 text-primary hover:text-primary/80 transition-colors">
+<span>En savoir plus</span>
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Formation Section -->
+<section id="formation" class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-3xl font-bold text-gray-800 mb-2">Formation</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Mon parcours académique en communication et multimédia</p>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+<!-- Timeline Items -->
+<div class="space-y-12">
+<!-- Item 1 -->
+<div class="timeline-item relative fade-in">
+<div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white z-10"></div>
+<div class="md:w-5/12 ml-auto md:pl-12 p-6 bg-white rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-graduation-cap-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Master 1 en Communication Multimédia</h3>
+</div>
+<p class="text-gray-600 mb-2">École de Management et d'Innovation Technologique (EMIT)</p>
+<p class="text-gray-500 text-sm">2024 - 2025</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="timeline-item relative fade-in">
+<div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white z-10"></div>
+<div class="md:w-5/12 mr-auto md:pr-12 p-6 bg-white rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-book-open-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Licence en Communication Multimédia</h3>
+</div>
+<p class="text-gray-600 mb-2">École de Management et d'Innovation Technologique (EMIT)</p>
+<p class="text-gray-500 text-sm">2023 - 2024</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="timeline-item relative fade-in">
+<div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white z-10"></div>
+<div class="md:w-5/12 ml-auto md:pl-12 p-6 bg-white rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-book-open-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Deuxième année en Relation Publique et Multimédia</h3>
+</div>
+<p class="text-gray-600 mb-2">École de Management et d'Innovation Technologique (EMIT)</p>
+<p class="text-gray-500 text-sm">2022 - 2023</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="timeline-item relative fade-in">
+<div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white z-10"></div>
+<div class="md:w-5/12 mr-auto md:pr-12 p-6 bg-white rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-graduation-cap-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">Baccalauréat</h3>
+</div>
+<p class="text-gray-600 mb-2">Lycée pôle Fort-dauphin</p>
+<p class="text-gray-500 text-sm">2019 - 2020</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="timeline-item relative fade-in">
+<div class="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full bg-primary border-4 border-white z-10"></div>
+<div class="md:w-5/12 ml-auto md:pl-12 p-6 bg-white rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-book-open-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800">BEPC</h3>
+</div>
+<p class="text-gray-600 mb-2">Collège lutherien Ambohimazava Fort-dauphin</p>
+<p class="text-gray-500 text-sm">2014 - 2015</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section id="experience" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-3xl font-bold text-gray-800 mb-2">Expérience professionnelle</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Mes expériences professionnelles et responsabilités</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Experience 1 -->
+<div class="experience-card bg-gray-50 p-6 rounded shadow-sm fade-in">
+<div class="flex items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-movie-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Stagiaire</h3>
+<p class="text-primary font-medium">HERTS MADAGASCAR</p>
+</div>
+</div>
+<p class="text-gray-600 mb-3">Production audiovisuelle et promotion de la culture d'entreprise</p>
+<p class="text-gray-500 text-sm">2023 - 2024</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Production vidéo</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Communication interne</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Édition</span>
+</div>
+</div>
+<!-- Experience 2 -->
+<div class="experience-card bg-gray-50 p-6 rounded shadow-sm fade-in" style="animation-delay: 0.2s;">
+<div class="flex items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-team-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Coordonnateur de Mention</h3>
+<p class="text-primary font-medium">Relation Publique et Multimédia (RPM)</p>
+</div>
+</div>
+<p class="text-gray-600 mb-3">Association des étudiants EMIT</p>
+<p class="text-gray-500 text-sm">2023 - 2024</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Coordination</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Gestion d'équipe</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Communication</span>
+</div>
+</div>
+<!-- Experience 3 -->
+<div class="experience-card bg-gray-50 p-6 rounded shadow-sm fade-in" style="animation-delay: 0.3s;">
+<div class="flex items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-database-2-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Stagiaire</h3>
+<p class="text-primary font-medium">Direction Régionale de la Communication et de la Culture Anosy</p>
+</div>
+</div>
+<p class="text-gray-600 mb-3">Création de base de données pour la Gestion de Ressource Humaine (GRH)</p>
+<p class="text-gray-500 text-sm">2022 - 2023</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Base de données</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">GRH</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Administration</span>
+</div>
+</div>
+<!-- Experience 4 -->
+<div class="experience-card bg-gray-50 p-6 rounded shadow-sm fade-in" style="animation-delay: 0.4s;">
+<div class="flex items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-user-star-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Délégué de classe</h3>
+<p class="text-primary font-medium">RPM L1 et L2</p>
+</div>
+</div>
+<p class="text-gray-600 mb-3">École de Management et d'innovation Technologique Fianarantsoa</p>
+<p class="text-gray-500 text-sm">2022 - 2023</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Leadership</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Représentation</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Médiation</span>
+</div>
+</div>
+<!-- Experience 5 -->
+<div class="experience-card bg-gray-50 p-6 rounded shadow-sm fade-in" style="animation-delay: 0.5s;">
+<div class="flex items-start mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-government-line ri-lg"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-800">Président de novice</h3>
+<p class="text-primary font-medium">Fl.MPI.ZA</p>
+</div>
+</div>
+<p class="text-gray-600 mb-3">Flkambanan'ny MPlanatsy Zanak'Anosy Fianarantsoa</p>
+<p class="text-gray-500 text-sm">2020 - 2021</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Leadership</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Organisation</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Gestion d'événements</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="competences" class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-3xl font-bold text-gray-800 mb-2">Compétences</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">Mes compétences techniques et linguistiques</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Technical Skills -->
+<div class="fade-in">
+<h3 class="text-xl font-semibold text-gray-800 mb-6">Compétences techniques</h3>
+<!-- Skill 1 -->
+<div class="mb-6">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700 font-medium">Suite Adobe</span>
+<span class="text-primary">90%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 90%"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="mb-6">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700 font-medium">Blender</span>
+<span class="text-primary">75%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 75%"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="mb-6">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700 font-medium">Figma</span>
+<span class="text-primary">85%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 85%"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="mb-6">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700 font-medium">MS Office</span>
+<span class="text-primary">95%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 95%"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div class="mb-6">
+<div class="flex justify-between mb-2">
+<span class="text-gray-700 font-medium">Systèmes d'exploitation (Windows/Mac/Linux)</span>
+<span class="text-primary">80%</span>
+</div>
+<div class="skill-bar">
+<div class="skill-progress" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<!-- Languages and Other Skills -->
+<div class="fade-in" style="animation-delay: 0.3s;">
+<h3 class="text-xl font-semibold text-gray-800 mb-6">Langues</h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- Language 1 -->
+<div class="bg-white p-5 rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-translate-2-line ri-lg"></i>
+</div>
+<h4 class="text-lg font-medium text-gray-800">Malgache</h4>
+</div>
+<div class="flex space-x-1">
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+</div>
+<p class="text-gray-600 mt-2 text-sm">Langue maternelle</p>
+</div>
+<!-- Language 2 -->
+<div class="bg-white p-5 rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-translate-2-line ri-lg"></i>
+</div>
+<h4 class="text-lg font-medium text-gray-800">Français</h4>
+</div>
+<div class="flex space-x-1">
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-gray-200 rounded-full"></div>
+</div>
+<p class="text-gray-600 mt-2 text-sm">Courant professionnel</p>
+</div>
+<!-- Language 3 -->
+<div class="bg-white p-5 rounded shadow-sm">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-3">
+<i class="ri-translate-2-line ri-lg"></i>
+</div>
+<h4 class="text-lg font-medium text-gray-800">Anglais</h4>
+</div>
+<div class="flex space-x-1">
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-primary rounded-full"></div>
+<div class="w-full h-2 bg-gray-200 rounded-full"></div>
+<div class="w-full h-2 bg-gray-200 rounded-full"></div>
+</div>
+<p class="text-gray-600 mt-2 text-sm">Intermédiaire</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Software Icons -->
+<div class="mt-16 fade-in" style="animation-delay: 0.5s;">
+<h3 class="text-xl font-semibold text-gray-800 mb-8 text-center">Logiciels maîtrisés</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-photoshop-line ri-3x"></i>
+</div>
+<span class="text-gray-700">Photoshop</span>
+</div>
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-illustrator-line ri-3x"></i>
+</div>
+<span class="text-gray-700">Illustrator</span>
+</div>
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-movie-2-line ri-3x"></i>
+</div>
+<span class="text-gray-700">Premiere Pro</span>
+</div>
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-blender-line ri-3x"></i>
+</div>
+<span class="text-gray-700">Blender</span>
+</div>
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-layout-line ri-3x"></i>
+</div>
+<span class="text-gray-700">Figma</span>
+</div>
+<div class="tech-icon bg-white p-4 rounded shadow-sm flex flex-col items-center hover:shadow-md transition-all duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center text-primary mb-3">
+<i class="ri-file-word-2-line ri-3x"></i>
+</div>
+<span class="text-gray-700">MS Office</span>
+</div>
+</div>
+</div>
+<!-- Projects Section -->
+<div class="mt-16 fade-in" style="animation-delay: 0.6s;">
+<h3 class="text-xl font-semibold text-gray-800 mb-8 text-center">Mes projets</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Projet Figma -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+<div class="h-48 overflow-hidden group relative">
+<img src="https://public.readdy.ai/ai/img_res/4f190ac7e5957b9870eaf7dece8b00b2.jpg" alt="Projet Figma" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+<div class="bg-white rounded-full p-2 transform scale-0 group-hover:scale-100 transition-transform duration-300">
+<i class="ri-eye-line ri-lg text-primary"></i>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-2">Projet Figma</h4>
+<p class="text-gray-600 text-sm mb-3">Conception d'interface utilisateur pour une application mobile et Web.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">UI/UX</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Wireframing</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Prototypage</span>
+</div>
+</div>
+</div>
+<!-- Projet Photoshop -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/7fcd25ad588c03b34c2f8f6c3b45d51b.jpg" alt="Projet Photoshop" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-2">Projet Photoshop</h4>
+<p class="text-gray-600 text-sm mb-3">Retouche et manipulation d'images et Composition.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Retouche photo</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Composition</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Montage</span>
+</div>
+</div>
+</div>
+<!-- Projet Illustrator -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/480d4df425bec694228fdee23ad142bc.jpg" alt="Projet Illustrator" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-2">Projet Illustrator</h4>
+<p class="text-gray-600 text-sm mb-3">Création d'une identité visuelle et Création Logo .</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Logo</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Identité visuelle</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Illustration</span>
+</div>
+</div>
+</div>
+<!-- Projet Blender -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-48 overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/bbe7197c496bf3c59ec5b68916d2bf39.jpg" alt="Projet Blender" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-2">Projet Blender</h4>
+<p class="text-gray-600 text-sm mb-3">Modélisation 3D et animation d'un court métrage promotionnel </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Modélisation 3D</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Animation</span>
+<span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Rendu</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 fade-in">
+<h2 class="text-3xl font-bold text-gray-800 mb-2">Contact</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-3xl mx-auto">N'hésitez pas à me contacter pour discuter de vos projets ou opportunités de collaboration</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Contact Info -->
+<div class="fade-in">
+<h3 class="text-xl font-semibold text-gray-800 mb-6">Mes coordonnées</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="contact-icon w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800 mb-1">Téléphone</h4>
+<p class="text-gray-600">+261 34 11 83 800</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="contact-icon w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800 mb-1">Email</h4>
+<p class="text-gray-600">prrzefania@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="contact-icon w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-full mr-4 flex-shrink-0">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800 mb-1">Adresse</h4>
+<p class="text-gray-600">Andrainjato, Fianarantsoa, Madagascar</p>
+</div>
+</div>
+<div class="pt-4">
+<h4 class="text-lg font-medium text-gray-800 mb-3">Réseaux sociaux</h4>
+<div class="flex space-x-4">
+<a href="#" class="contact-icon w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a href="#" class="contact-icon w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-line ri-lg"></i>
+</a>
+<a href="#" class="contact-icon w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="contact-icon w-10 h-10 flex items-center justify-center bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-white transition-colors">
+<i class="ri-behance-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="fade-in" style="animation-delay: 0.3s;">
+<h3 class="text-xl font-semibold text-gray-800 mb-6">Envoyez-moi un message</h3>
+<form id="contactForm">
+<div class="mb-4">
+<label for="name" class="block text-gray-700 mb-2">Nom complet</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+<i class="ri-user-line"></i>
+</div>
+<input type="text" id="name" class="w-full pl-10 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Votre nom" required>
+</div>
+</div>
+<div class="mb-4">
+<label for="email" class="block text-gray-700 mb-2">Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+<i class="ri-mail-line"></i>
+</div>
+<input type="email" id="email" class="w-full pl-10 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Votre email" required>
+</div>
+</div>
+<div class="mb-4">
+<label for="subject" class="block text-gray-700 mb-2">Sujet</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+<i class="ri-chat-1-line"></i>
+</div>
+<input type="text" id="subject" class="w-full pl-10 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Sujet de votre message" required>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<div class="relative">
+<div class="absolute top-3 left-3 text-gray-500">
+<i class="ri-message-3-line"></i>
+</div>
+<textarea id="message" rows="5" class="w-full pl-10 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Votre message" required></textarea>
+</div>
+</div>
+<button type="submit" class="btn-primary bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap flex items-center justify-center">
+<i class="ri-send-plane-line mr-2"></i>
+Envoyer le message
+</button>
+<div id="formSuccess" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded">
+<div class="flex items-center">
+<i class="ri-check-line mr-2"></i>
+<span>Votre message a été envoyé avec succès!</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-2xl font-['Pacifico'] text-white">R. Perry</a>
+<p class="mt-2 text-gray-400">Spécialiste en Communication Multimédia</p>
+</div>
+<div class="flex flex-col md:flex-row md:space-x-12 space-y-6 md:space-y-0">
+<div>
+<h4 class="text-lg font-semibold mb-3">Navigation</h4>
+<ul class="space-y-2">
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+<li><a href="#formation" class="text-gray-400 hover:text-white transition-colors">Formation</a></li>
+<li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Expérience</a></li>
+<li><a href="#competences" class="text-gray-400 hover:text-white transition-colors">Compétences</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-3">Contact</h4>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="ri-phone-line mr-2"></i>
+<span>+261 34 11 83 800</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-2"></i>
+<span>prrzefania@gmail.com</span>
+</li>
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-2"></i>
+<span>Andrainjato, Fianarantsoa</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400">&copy; 2025 Razafindrazefania Perry. Tous droits réservés.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-behance-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<script>
+// Fade-in animation on scroll
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('active');
+}
+});
+}, {
+threshold: 0.1
+});
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+// Skill bars animation
+const skillBars = document.querySelectorAll('.skill-progress');
+const skillObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const bar = entry.target;
+const width = bar.style.width;
+bar.style.width = '0';
+setTimeout(() => {
+bar.style.width = width;
+}, 300);
+}
+});
+}, {
+threshold: 0.5,
+once: true
+});
+skillBars.forEach(bar => {
+skillObserver.observe(bar);
+});
+// Back to top button
+const backToTopButton = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+if (window.pageYOffset > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.remove('opacity-100', 'visible');
+backToTopButton.classList.add('opacity-0', 'invisible');
+}
+});
+backToTopButton.addEventListener('click', () => {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+// Mobile menu toggle
+const menuButton = document.querySelector('button');
+const nav = document.querySelector('nav');
+menuButton.addEventListener('click', () => {
+nav.classList.toggle('hidden');
+nav.classList.toggle('flex');
+nav.classList.toggle('flex-col');
+nav.classList.toggle('absolute');
+nav.classList.toggle('top-16');
+nav.classList.toggle('right-6');
+nav.classList.toggle('bg-white');
+nav.classList.toggle('p-4');
+nav.classList.toggle('rounded');
+nav.classList.toggle('shadow-lg');
+nav.classList.toggle('z-50');
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+// Close mobile menu if open
+if (!nav.classList.contains('hidden')) {
+nav.classList.add('hidden');
+nav.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'right-6', 'bg-white', 'p-4', 'rounded', 'shadow-lg', 'z-50');
+}
+});
+});
+// Contact form handling
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simulate form submission
+const submitButton = this.querySelector('button[type="submit"]');
+const originalText = submitButton.innerHTML;
+submitButton.disabled = true;
+submitButton.innerHTML = '<i class="ri-loader-4-line ri-spin mr-2"></i> Envoi en cours...';
+// Simulate API call
+setTimeout(() => {
+submitButton.innerHTML = originalText;
+submitButton.disabled = false;
+formSuccess.classList.remove('hidden');
+contactForm.reset();
+// Hide success message after 5 seconds
+setTimeout(() => {
+formSuccess.classList.add('hidden');
+}, 5000);
+}, 1500);
+});
+}
+// Add active class to current section in navigation
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+let current = '';
+sections.forEach(section => {
+const sectionTop = section.offsetTop;
+const sectionHeight = section.clientHeight;
+if (pageYOffset >= (sectionTop - 100)) {
+current = section.getAttribute('id');
+}
+});
+document.querySelectorAll('.nav-link').forEach(link => {
+link.classList.remove('text-primary');
+if (link.getAttribute('href') === `#${current}`) {
+link.classList.add('text-primary');
+}
+});
+});
+});
+</script>
+</body>
+</html>
